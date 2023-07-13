@@ -63,27 +63,35 @@ export class SortedBarChartComponent {
       categoryAxis.sortBySeries = series;
         chart.data = [
             {
-                "network": "Facebook",
+                "network": "Lithuania",
                 "MAU": 2255
             },
             {
-                "network": "Google+",
+                "network": "Belgium",
                 "MAU": 4300
             },
             {
-                "network": "Instagram",
+                "network": "The Netherlands",
                 "MAU": 1000
             },
             {
-                "network": "Pinterest",
+                "network": "Germany",
                 "MAU": 2465
             },
             {
-                "network": "Reddit",
+                "network": "UK",
                 "MAU": 3550
             },
             {
-                "network": "TikTok",
+                "network": "Ireland",
+                "MAU": 5000
+            },
+            {
+                "network": "Australia",
+                "MAU": 5000
+            },
+            {
+                "network": "Czech Republic",
                 "MAU": 5000
             }
         ]

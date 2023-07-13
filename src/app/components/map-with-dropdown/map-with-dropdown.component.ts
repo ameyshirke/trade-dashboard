@@ -34,7 +34,7 @@ export class MapWithDropdownComponent {
 
     this.browserOnly(() => {
 
-        let chart = am4core.create("chartdiv", am4maps.MapChart);
+      let chart = am4core.create("map-with-routes", am4maps.MapChart);
 
         let interfaceColors = new am4core.InterfaceColorSet();
 
@@ -87,19 +87,19 @@ export class MapWithDropdownComponent {
                 "title": "Stockholm",
                 "latitude": 59.3328,
                 "longitude": 18.0645
-            }, 
+            },
             {
                 "id": "bern",
                 "title": "Bern",
                 "latitude": 46.9480,
                 "longitude": 7.4481
-            }, 
+            },
             {
                 "id": "kiev",
                 "title": "Kiev",
                 "latitude": 50.4422,
                 "longitude": 30.5367
-            }, 
+            },
             {
                 "id": "paris",
                 "title": "Paris",
@@ -142,7 +142,7 @@ export class MapWithDropdownComponent {
                 "latitude": -10.8567,
                 "longitude": -74.3510
             }
-            
+
         ];
 
 
@@ -240,7 +240,7 @@ export class MapWithDropdownComponent {
         plane.fill = am4core.color("#cc0000");
 
         let title = labelsContainer.createChild(am4core.Label);
-        title.text = "Flights from London";
+        title.text = "Select a country";
         title.fill = am4core.color("#cc0000");
         title.fontSize = 20;
         title.valign = "middle";
@@ -367,7 +367,7 @@ export class MapWithDropdownComponent {
                 }
             }
 
-            title.text = "Flights from " + dataContext.title;
+            title.text = "Trade routes from " + dataContext.title;
 
             chart.zoomToGeoPoint({ latitude: dataContext.zoomLatitude, longitude: dataContext.zoomLongitude }, dataContext.zoomLevel, true);
         }
