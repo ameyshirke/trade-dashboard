@@ -8,13 +8,17 @@
       background: linear-gradient(180deg, #FF6099 0%, #FF744F 100%);;
       outline: none;
     }
+
+    .ngx-slider-inner-tooltip{
+      font-size: 15px;
+    }
   }
 }
 
 div {
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(244, 81, 69, 0.2);
     border-radius: 30px;
-    padding: 18px;
+    padding: 16px 18px;
   }
   

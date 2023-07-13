@@ -3,8 +3,10 @@ import { isPlatformBrowser } from '@angular/common';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import am4themes_material from "@amcharts/amcharts4/themes/material";
 
 am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_material);
 
 @Component({
   selector: 'app-sorted-bar-chart',
@@ -30,6 +32,16 @@ export class SortedBarChartComponent {
     this.browserOnly(() => {
       let chart = am4core.create("sorted-chart-container", am4charts.XYChart);
       chart.padding(4, 4, 4, 4);
+
+        chart.colors.list = [
+            am4core.color("#F45442"),
+            am4core.color("#E1D9DB"),
+            am4core.color("#395067"),
+            am4core.color("#A0E7E5"),
+            am4core.color("#986198") ,
+            am4core.color("#9BDEAC"),
+            am4core.color("#FBE7C6"),
+        ];
       
       let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
       categoryAxis.renderer.grid.template.location = 0;
