@@ -1,0 +1,20 @@
+:host {
+  ::ng-deep {
+    .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
+      background-color: #ffffff;
+    }
+
+    .ngx-slider .ngx-slider-pointer {
+      background: linear-gradient(180deg, #FF6099 0%, #FF744F 100%);;
+      outline: none;
+    }
+  }
+}
+
+div {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    padding: 18px;
+  }
+  
