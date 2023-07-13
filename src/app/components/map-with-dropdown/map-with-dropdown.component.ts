@@ -18,7 +18,6 @@ am4core.useTheme(am4themes_animated);
 
 export class MapWithDropdownComponent {
 
-
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {}
 
   // Run the function only in the browser
@@ -253,11 +252,27 @@ export class MapWithDropdownComponent {
 
         changeLink.events.on("hit", function() {
             if (currentOrigin == originImageSeries.dataItems.getIndex(6)) {
+                showLines(originImageSeries.dataItems.getIndex(0));
+            }
+            else if(currentOrigin == originImageSeries.dataItems.getIndex(0)) {
                 showLines(originImageSeries.dataItems.getIndex(1));
             }
-            else {
+            else if(currentOrigin == originImageSeries.dataItems.getIndex(1)) {
+                showLines(originImageSeries.dataItems.getIndex(2));
+            }
+            else if(currentOrigin == originImageSeries.dataItems.getIndex(2)) {
+                showLines(originImageSeries.dataItems.getIndex(3));
+            }
+            else if(currentOrigin == originImageSeries.dataItems.getIndex(3)) {
+                showLines(originImageSeries.dataItems.getIndex(4));
+            }
+            else if(currentOrigin == originImageSeries.dataItems.getIndex(4)) {
+                showLines(originImageSeries.dataItems.getIndex(5));
+            }
+            else if(currentOrigin == originImageSeries.dataItems.getIndex(5)) {
                 showLines(originImageSeries.dataItems.getIndex(6));
             }
+
         })
 
         changeLink.x = 142;
@@ -345,6 +360,10 @@ export class MapWithDropdownComponent {
         chart.events.on("ready", function() {
             showLines(originImageSeries.dataItems.getIndex(0));
         })
+
+        document.getElementById('mapDropdown').addEventListener('change', function(e) {
+            showLines(originImageSeries.dataItems.getIndex(0));
+        });
 
 
         let currentOrigin: am4maps.MapImageSeriesDataItem | undefined;
