@@ -28,8 +28,8 @@ export class SortedBarChartComponent {
   ngAfterViewInit() {
 
     this.browserOnly(() => {
-      let chart = am4core.create("chartdiv", am4charts.XYChart);
-      chart.padding(40, 40, 40, 40);
+      let chart = am4core.create("sorted-chart-container", am4charts.XYChart);
+      chart.padding(4, 4, 4, 4);
       
       let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
       categoryAxis.renderer.grid.template.location = 0;
@@ -61,55 +61,31 @@ export class SortedBarChartComponent {
       });
       
       categoryAxis.sortBySeries = series;
-      chart.data = [
-          {
-            "network": "Facebook",
-            "MAU": 2255250000
-          },
-          {
-            "network": "Google+",
-            "MAU": 430000000
-          },
-          {
-            "network": "Instagram",
-            "MAU": 1000000000
-          },
-          {
-            "network": "Pinterest",
-            "MAU": 246500000
-          },
-          {
-            "network": "Reddit",
-            "MAU": 355000000
-          },
-          {
-            "network": "TikTok",
-            "MAU": 500000000
-          },
-          {
-            "network": "Tumblr",
-            "MAU": 624000000
-          },
-          {
-            "network": "Twitter",
-            "MAU": 329500000
-          },
-          {
-            "network": "WeChat",
-            "MAU": 1000000000
-          },
-          {
-            "network": "Weibo",
-            "MAU": 431000000
-          },
-          {
-            "network": "Whatsapp",
-            "MAU": 1433333333
-          },
-          {
-            "network": "YouTube",
-            "MAU": 1900000000
-          }
+        chart.data = [
+            {
+                "network": "Facebook",
+                "MAU": 2255
+            },
+            {
+                "network": "Google+",
+                "MAU": 4300
+            },
+            {
+                "network": "Instagram",
+                "MAU": 1000
+            },
+            {
+                "network": "Pinterest",
+                "MAU": 2465
+            },
+            {
+                "network": "Reddit",
+                "MAU": 3550
+            },
+            {
+                "network": "TikTok",
+                "MAU": 5000
+            }
         ]
     });
   }
