@@ -198,8 +198,11 @@ export class MapWithDropdownComponent implements OnChanges{
             lineSeries.mapLines.template.line.strokeOpacity = 0.5;
 
 
+            let i = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+            console.log(i);
+
             chart.events.on("ready", function () {
-                showLines(originImageSeries.dataItems.getIndex(0));
+                showLines(originImageSeries.dataItems.getIndex(i));
             })
 
             document.getElementById('mapDropdown').addEventListener('change', function (e:any) {

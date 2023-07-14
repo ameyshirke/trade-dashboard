@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import Chart from 'chart.js';
 
 // core components
@@ -16,6 +17,16 @@ import {
 })
 export class DashboardComponent implements OnInit {
 
+    constructor(public router:Router) {}
+
+    refreshPage() {
+        console.log("dfsdf")
+        const currentUrl = this.router.url;
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            this.router.navigate([currentUrl]);
+        });
+    }
+
     public datasets: any;
     public data: any;
     public salesChart;
@@ -27,9 +38,15 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit(): void {
         this.originCities = this.originCities1;
+
         this.yearByCitiesMap.set("2012",this.originCities1 );
         this.yearByCitiesMap.set("2013",this.originCities2 );
         this.yearByCitiesMap.set("2014",this.originCities3 );
+        this.yearByCitiesMap.set("2015",this.originCities1 );
+        this.yearByCitiesMap.set("2016",this.originCities2 );
+        this.yearByCitiesMap.set("2017",this.originCities3 );
+        this.yearByCitiesMap.set("2018",this.originCities1 );
+        this.yearByCitiesMap.set("2019",this.originCities3 );
     }
 
     destinationCities = [
@@ -346,36 +363,32 @@ export class DashboardComponent implements OnInit {
 
     sortedBardChartData = [
         {
-            "network": "Lithuania",
-            "MAU": 2255
+            "network": "India",
+            "MAU": 2755
         },
         {
-            "network": "Belgium",
-            "MAU": 4300
+            "network": "USA",
+            "MAU": 4700
         },
         {
-            "network": "The Netherlands",
-            "MAU": 1000
+            "network": "China",
+            "MAU": 4050
+        },
+        {
+            "network": "South Africa",
+            "MAU": 2965
+        },
+        {
+            "network": "Saudi Arabia",
+            "MAU": 1500
         },
         {
             "network": "Germany",
-            "MAU": 2465
+            "MAU": 6500
         },
         {
-            "network": "UK",
-            "MAU": 3550
-        },
-        {
-            "network": "Ireland",
-            "MAU": 5000
-        },
-        {
-            "network": "Australia",
-            "MAU": 5000
-        },
-        {
-            "network": "Czech Republic",
-            "MAU": 5000
+            "network": "Brazil",
+            "MAU": 2740
         }
     ];
 

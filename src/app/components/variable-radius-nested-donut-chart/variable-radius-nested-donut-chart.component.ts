@@ -37,41 +37,33 @@ export class VariableRadiusNestedDonutChartComponent {
 
       // Add data
       chart.data = [{
-        "country": "Lithuania",
+        "country": "Germany",
         "litres": 501.9,
-        "bottles": 1500
+        "bottles": 1200
       }, {
-        "country": "Czech Republic",
+        "country": "India",
         "litres": 301.9,
         "bottles": 990
       }, {
-        "country": "Ireland",
+        "country": "USA",
         "litres": 201.1,
         "bottles": 785
       }, {
-        "country": "Germany",
+        "country": "China",
         "litres": 165.8,
         "bottles": 255
       }, {
-        "country": "Australia",
+        "country": "Brazil",
         "litres": 139.9,
         "bottles": 452
       }, {
-        "country": "Austria",
+        "country": "South Africa",
         "litres": 128.3,
         "bottles": 332
       }, {
-        "country": "UK",
+        "country": "Saudi Arabia",
         "litres": 99,
         "bottles": 150
-      }, {
-        "country": "Belgium",
-        "litres": 60,
-        "bottles": 178
-      }, {
-        "country": "The Netherlands",
-        "litres": 50,
-        "bottles": 50
       }];
 
       // Add and configure Series

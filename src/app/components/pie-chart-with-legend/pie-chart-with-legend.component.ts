@@ -76,22 +76,57 @@ export class PieChartWithLegendComponent {
       // Add a legend
       chart.legend = new am4charts.Legend();
       chart.legend.disabled = true;
-
-      chart.data = [
+      
+      
+      const listData1 = [
         {
           "product": "Bills of Exchange",
-          "% of trade": 60
+          "% of trade": 50
         },{
            "product": "Performance Guarantees",
-          "% of trade": 40
+          "% of trade": 45
         }, {
            "product": "Financial guarantees",
-          "% of trade": 50
+          "% of trade": 40
         }, {
           "product": "others",
-          "% of trade": 45
+          "% of trade": 25
         }
     ];
+
+    const listData2 = [
+        {
+          "product": "Letter Of Credits",
+          "% of trade": 50
+        },{
+           "product": "Loans",
+          "% of trade": 30
+        }, {
+           "product": "Performance Gurantees",
+          "% of trade": 60
+        }, {
+          "product": "others",
+          "% of trade": 15
+        }
+    ];
+
+    const listData3 = [
+        {
+          "product": "Loans",
+          "% of trade": 30
+        },{
+           "product": "Letter Of Credits",
+          "% of trade": 50
+        }, {
+           "product": "Performance Guarantees",
+          "% of trade": 60
+        }, {
+          "product": "others",
+          "% of trade": 20
+        }
+    ];
+
+    chart.data = listData1;
 
     });
   }
