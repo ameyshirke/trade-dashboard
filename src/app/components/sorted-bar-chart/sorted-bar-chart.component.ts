@@ -82,7 +82,7 @@ export class SortedBarChartComponent {
         },
         {
             "network": "USA",
-            "MAU": 4700
+            "MAU": 8700
         },
         {
             "network": "China",
@@ -113,7 +113,7 @@ export class SortedBarChartComponent {
         },
         {
             "network": "USA",
-            "MAU": 3546
+            "MAU": 9546
         },
         {
             "network": "China",

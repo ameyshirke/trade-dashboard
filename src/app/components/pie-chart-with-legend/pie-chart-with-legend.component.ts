@@ -56,7 +56,7 @@ export class PieChartWithLegendComponent {
       pieSeries.alignLabels = false;
       pieSeries.labels.template.bent = true;
       pieSeries.labels.template.radius = 3;
-      pieSeries.labels.template.fontSize = 11;
+      pieSeries.labels.template.fontSize = 15;
       pieSeries.labels.template.padding(0,0,0,0);
 
       pieSeries.ticks.template.disabled = true;
