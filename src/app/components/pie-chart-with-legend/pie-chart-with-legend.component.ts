@@ -34,8 +34,8 @@ export class PieChartWithLegendComponent {
 
       // Add and configure Series
       let pieSeries = chart.series.push(new am4charts.PieSeries());
-      pieSeries.dataFields.value = "litres";
-      pieSeries.dataFields.category = "country";
+      pieSeries.dataFields.value = "% of trade";
+      pieSeries.dataFields.category = "product";
 
       // Let's cut a hole in our Pie chart the size of 30% the radius
       chart.innerRadius = am4core.percent(30);
@@ -77,25 +77,21 @@ export class PieChartWithLegendComponent {
       chart.legend = new am4charts.Legend();
       chart.legend.disabled = true;
 
-      chart.data = [{
-        "country": "Lithuania",
-        "litres": 501.9
-      },{
-        "country": "Germany",
-        "litres": 165.8
-      }, {
-        "country": "Australia",
-        "litres": 139.9
-      }, {
-        "country": "Austria",
-        "litres": 128.3
-      }, {
-        "country": "UK",
-        "litres": 99
-      }, {
-        "country": "Belgium",
-        "litres": 60
-      }];
+      chart.data = [
+        {
+          "product": "Bills of Exchange",
+          "% of trade": 60
+        },{
+           "product": "Performance Guarantees",
+          "% of trade": 40
+        }, {
+           "product": "Financial guarantees",
+          "% of trade": 50
+        }, {
+          "product": "others",
+          "% of trade": 45
+        }
+    ];
 
     });
   }
