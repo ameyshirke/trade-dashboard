@@ -361,37 +361,7 @@ export class DashboardComponent implements OnInit {
         "longitude": 22.9375
     }];
 
-    sortedBardChartData = [
-        {
-            "network": "India",
-            "MAU": 2755
-        },
-        {
-            "network": "USA",
-            "MAU": 4700
-        },
-        {
-            "network": "China",
-            "MAU": 4050
-        },
-        {
-            "network": "South Africa",
-            "MAU": 2965
-        },
-        {
-            "network": "Saudi Arabia",
-            "MAU": 1500
-        },
-        {
-            "network": "Germany",
-            "MAU": 6500
-        },
-        {
-            "network": "Brazil",
-            "MAU": 2740
-        }
-    ];
-
+    
 
     yearChanged($event: any) {
         console.log("yearChanged" + $event);

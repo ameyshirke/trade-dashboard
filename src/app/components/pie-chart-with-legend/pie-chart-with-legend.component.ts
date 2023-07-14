@@ -97,16 +97,16 @@ export class PieChartWithLegendComponent {
     const listData2 = [
         {
           "product": "Letter Of Credits",
-          "% of trade": 50
+          "% of trade": 150
         },{
            "product": "Loans",
-          "% of trade": 30
+          "% of trade": 40
         }, {
            "product": "Performance Gurantees",
-          "% of trade": 60
+          "% of trade": 200
         }, {
           "product": "others",
-          "% of trade": 15
+          "% of trade": 10
         }
     ];
 
@@ -125,6 +125,19 @@ export class PieChartWithLegendComponent {
           "% of trade": 20
         }
     ];
+
+    document.getElementById('mapDropdown').addEventListener('change', function (e:any) {
+      if(chart.data == listData1){
+        chart.data = listData2;
+      }
+      else if(chart.data == listData2){
+        chart.data = listData3;
+      }
+      else if(chart.data == listData3){
+        chart.data = listData1;
+      }
+      chart.invalidateData();
+    });
 
     chart.data = listData1;
 

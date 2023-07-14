@@ -16,7 +16,6 @@ am4core.useTheme(am4themes_material);
 
 export class SortedBarChartComponent {
 
-  @Input() data = [];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {}
 
@@ -75,9 +74,121 @@ export class SortedBarChartComponent {
       series.columns.template.adapter.add("fill", function(fill, target){
         return chart.colors.getIndex(target.dataItem!.index);
       });
+
+      const sortedBardChartData1 = [
+        {
+            "network": "India",
+            "MAU": 2755
+        },
+        {
+            "network": "USA",
+            "MAU": 4700
+        },
+        {
+            "network": "China",
+            "MAU": 4050
+        },
+        {
+            "network": "South Africa",
+            "MAU": 2965
+        },
+        {
+            "network": "Saudi Arabia",
+            "MAU": 1500
+        },
+        {
+            "network": "Germany",
+            "MAU": 6500
+        },
+        {
+            "network": "Brazil",
+            "MAU": 2740
+        }
+    ];
+
+    const sortedBardChartData2 = [
+        {
+            "network": "India",
+            "MAU": 6353
+        },
+        {
+            "network": "USA",
+            "MAU": 3546
+        },
+        {
+            "network": "China",
+            "MAU": 4536
+        },
+        {
+            "network": "South Africa",
+            "MAU": 5362
+        },
+        {
+            "network": "Saudi Arabia",
+            "MAU": 3526
+        },
+        {
+            "network": "Germany",
+            "MAU": 7635
+        },
+        {
+            "network": "Brazil",
+            "MAU": 5373
+        }
+    ];
+
+    const sortedBardChartData3 = [
+      {
+          "network": "India",
+          "MAU": 1253
+      },
+      {
+          "network": "USA",
+          "MAU": 7463
+      },
+      {
+          "network": "China",
+          "MAU": 2373
+      },
+      {
+          "network": "South Africa",
+          "MAU": 7463
+      },
+      {
+          "network": "Saudi Arabia",
+          "MAU": 3432
+      },
+      {
+          "network": "Germany",
+          "MAU": 4353
+      },
+      {
+          "network": "Brazil",
+          "MAU": 2454
+      }
+  ];
       
       categoryAxis.sortBySeries = series;
-        chart.data = this.data;
-    });
+      let i = 1;
+      document.getElementById('mapDropdown').addEventListener('change', function (e:any) {
+        if(i == 1){
+          chart.data = sortedBardChartData2;
+          i = 2;
+        }
+        else if(i == 2){
+          chart.data = sortedBardChartData3;
+          i = 3;
+        }
+        else if(i == 3){
+          chart.data = sortedBardChartData1;
+          i = 1;
+        }
+        chart.invalidateData();
+      });
+  
+      chart.data = sortedBardChartData1;
+  
+      });
+
   }
 }
