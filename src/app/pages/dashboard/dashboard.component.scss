@@ -2,6 +2,14 @@
   height: 150px;
 }
 
+:host {
+  ::ng-deep {
+    .header{
+      height: 80px;
+    }
+  }}
+
+
 .floating-slider{
   position: fixed;
   bottom: 0;

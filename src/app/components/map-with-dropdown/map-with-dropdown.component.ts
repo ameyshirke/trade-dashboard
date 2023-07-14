@@ -93,7 +93,7 @@ export class MapWithDropdownComponent implements OnChanges{
             title.marginLeft = 15;
 
             let changeLink = chart.createChild(am4core.TextLink);
-            changeLink.text = "Click to change origin city";
+            changeLink.text = "Click to change origin country";
             changeLink.isMeasured = false;
 
             changeLink.events.on("hit", function () {
@@ -193,6 +193,7 @@ export class MapWithDropdownComponent implements OnChanges{
             originImageSeries.data = originCities;
             destinationImageSeries.data = destinationCities;
 
+
             // Line series
             let lineSeries = chart.series.push(new am4maps.MapLineSeries());
             lineSeries.mapLines.template.line.strokeOpacity = 0.5;
@@ -202,6 +203,7 @@ export class MapWithDropdownComponent implements OnChanges{
             console.log(i);
 
             chart.events.on("ready", function () {
+                console.log("ready event triggered")
                 showLines(originImageSeries.dataItems.getIndex(i));
             })
 
@@ -209,6 +211,10 @@ export class MapWithDropdownComponent implements OnChanges{
                 showLines(originImageSeries.dataItems.getIndex(e.target.value));
             });
 
+            document.getElementById('app-slider').addEventListener('sliderChanged', function (e:any) {
+                // showLines(originImageSeries.dataItems.getIndex(e.target.value));
+                console.log(">> **"+ e);
+            });
 
             let currentOrigin: am4maps.MapImageSeriesDataItem | undefined;
 

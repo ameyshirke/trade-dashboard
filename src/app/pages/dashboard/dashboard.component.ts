@@ -17,15 +17,6 @@ import {
 })
 export class DashboardComponent implements OnInit {
 
-    constructor(public router:Router) {}
-
-    refreshPage() {
-        console.log("dfsdf")
-        const currentUrl = this.router.url;
-        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-            this.router.navigate([currentUrl]);
-        });
-    }
 
     public datasets: any;
     public data: any;
@@ -142,7 +133,6 @@ export class DashboardComponent implements OnInit {
         }
 
     ];
-
 
     originCities1 = [{
         "id": "germany",
