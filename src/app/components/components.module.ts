@@ -10,19 +10,19 @@ import {MapWithPathsComponent} from "./map-with-paths/map-with-paths.component";
 import {MapWithDropdownComponent} from "./map-with-dropdown/map-with-dropdown.component";
 import { SortedBarChartComponent } from './sorted-bar-chart/sorted-bar-chart.component';
 import { VariableRadiusNestedDonutChartComponent } from './variable-radius-nested-donut-chart/variable-radius-nested-donut-chart.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   declarations: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    MapWithPathsComponent,
-    MapWithDropdownComponent,
     SortedBarChartComponent,
     VariableRadiusNestedDonutChartComponent
   ],
@@ -30,8 +30,6 @@ import { VariableRadiusNestedDonutChartComponent } from './variable-radius-neste
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    MapWithPathsComponent,
-    MapWithDropdownComponent,
     SortedBarChartComponent,
     VariableRadiusNestedDonutChartComponent
   ]

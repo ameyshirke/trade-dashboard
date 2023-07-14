@@ -1,4 +1,4 @@
-import { Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
+import {Component, Inject, Input, NgZone, PLATFORM_ID} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
@@ -16,6 +16,8 @@ am4core.useTheme(am4themes_material);
 
 export class SortedBarChartComponent {
 
+  @Input() data = [];
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {}
 
   // Run the function only in the browser
@@ -30,17 +32,19 @@ export class SortedBarChartComponent {
   ngAfterViewInit() {
 
     this.browserOnly(() => {
+
       let chart = am4core.create("sorted-chart-container", am4charts.XYChart);
       chart.padding(4, 4, 4, 4);
 
         chart.colors.list = [
-            am4core.color("#F45442"),
-            am4core.color("#E1D9DB"),
-            am4core.color("#395067"),
-            am4core.color("#A0E7E5"),
-            am4core.color("#986198") ,
-            am4core.color("#9BDEAC"),
-            am4core.color("#FBE7C6"),
+            am4core.color("#92C5DC"),
+            am4core.color("#A8DCF3"),
+            am4core.color("#9298DD"),
+            am4core.color("#A37CC7"),
+            am4core.color("#B992DD") ,
+            am4core.color("#DD91D4"),
+            am4core.color("#C67BBD"),
+            am4core.color("#C67B91"),
         ];
       
       let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -73,40 +77,7 @@ export class SortedBarChartComponent {
       });
       
       categoryAxis.sortBySeries = series;
-        chart.data = [
-            {
-                "network": "Lithuania",
-                "MAU": 2255
-            },
-            {
-                "network": "Belgium",
-                "MAU": 4300
-            },
-            {
-                "network": "The Netherlands",
-                "MAU": 1000
-            },
-            {
-                "network": "Germany",
-                "MAU": 2465
-            },
-            {
-                "network": "UK",
-                "MAU": 3550
-            },
-            {
-                "network": "Ireland",
-                "MAU": 5000
-            },
-            {
-                "network": "Australia",
-                "MAU": 5000
-            },
-            {
-                "network": "Czech Republic",
-                "MAU": 5000
-            }
-        ]
+        chart.data = this.data;
     });
   }
 }

@@ -22,33 +22,43 @@ export class DashboardComponent implements OnInit {
   public clicked: boolean = true;
   public clicked1: boolean = false;
 
+  sortedBardChartData = [
+    {
+      "network": "Lithuania",
+      "MAU": 2255
+    },
+    {
+      "network": "Belgium",
+      "MAU": 4300
+    },
+    {
+      "network": "The Netherlands",
+      "MAU": 1000
+    },
+    {
+      "network": "Germany",
+      "MAU": 2465
+    },
+    {
+      "network": "UK",
+      "MAU": 3550
+    },
+    {
+      "network": "Ireland",
+      "MAU": 5000
+    },
+    {
+      "network": "Australia",
+      "MAU": 5000
+    },
+    {
+      "network": "Czech Republic",
+      "MAU": 5000
+    }
+  ];
+
   ngOnInit() {
 
-    this.datasets = [
-      [0, 20, 10, 30, 15, 40, 20, 60, 60],
-      [0, 20, 5, 25, 10, 30, 15, 40, 40]
-    ];
-    this.data = this.datasets[0];
-
-
-    var chartOrders = document.getElementById('chart-orders');
-
-    parseOptions(Chart, chartOptions());
-
-
-    var ordersChart = new Chart(chartOrders, {
-      type: 'bar',
-      options: chartExample2.options,
-      data: chartExample2.data
-    });
-
-    var chartSales = document.getElementById('chart-sales');
-
-    this.salesChart = new Chart(chartSales, {
-			type: 'line',
-			options: chartExample1.options,
-			data: chartExample1.data
-		});
   }
 
 

@@ -14,6 +14,7 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ComponentsModule} from "../../components/components.module";
 import {SliderModule} from "../../components/slider/slider.module";
+import {MapWithDropdownModule} from "../../components/map-with-dropdown/map-with-dropdown.module";
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {SliderModule} from "../../components/slider/slider.module";
         NgbModule,
         ClipboardModule,
         ComponentsModule,
-        SliderModule
+        SliderModule,
+        MapWithDropdownModule
     ],
   declarations: [
     DashboardComponent,
