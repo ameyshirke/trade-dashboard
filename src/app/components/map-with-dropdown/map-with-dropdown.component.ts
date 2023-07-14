@@ -84,26 +84,20 @@ export class MapWithDropdownComponent {
                     "longitude": -14.2799,
                 },
                 {
-                    "id": "stockholm",
-                    "title": "Stockholm",
-                    "latitude": 59.3328,
-                    "longitude": 18.0645
-                },
-                {
-                    "id": "bern",
-                    "title": "Bern",
+                    "id": "switzerland",
+                    "title": "Switzerland",
                     "latitude": 46.9480,
                     "longitude": 7.4481
                 },
                 {
-                    "id": "kiev",
-                    "title": "Kiev",
+                    "id": "ukraine",
+                    "title": "Ukraine",
                     "latitude": 50.4422,
                     "longitude": 30.5367
                 },
                 {
-                    "id": "paris",
-                    "title": "Paris",
+                    "id": "france",
+                    "title": "France",
                     "latitude": 48.8567,
                     "longitude": 2.3510
                 },
@@ -142,6 +136,126 @@ export class MapWithDropdownComponent {
                     "title": "Peru",
                     "latitude": -10.8567,
                     "longitude": -74.3510
+                },
+                {
+                    "id": "iceland",
+                    "title": "Iceland",
+                    "latitude": 65.8567,
+                    "longitude": -18.3510
+                },
+                {
+                    "id": "southkorea",
+                    "title": "South Korea",
+                    "latitude": 35.8567,
+                    "longitude": 128.3510
+                },
+                {
+                    "id": "mexico",
+                    "title": "Mexico",
+                    "latitude": 22.8567,
+                    "longitude": -102.3510
+                },
+                {
+                    "id": "egypt",
+                    "title": "Egypt",
+                    "latitude": 27.8567,
+                    "longitude": 27.3510
+                },
+                {
+                    "id": "argentina",
+                    "title": "Argentina",
+                    "latitude": -43.8567,
+                    "longitude": -68.3510
+                },
+                {
+                    "id": "algeria",
+                    "title": "Algeria",
+                    "latitude": 29.8567,
+                    "longitude": 4.3510
+                },
+                {
+                    "id": "mongolia",
+                    "title": "Mongolia",
+                    "latitude": 47.8567,
+                    "longitude": 103.3510
+                },
+                {
+                    "id": "newzealand",
+                    "title": "New Zealand",
+                    "latitude": -41.8567,
+                    "longitude": 173.3510
+                },
+                {
+                    "id": "madagascar",
+                    "title": "Madagascar",
+                    "latitude": -20.8567,
+                    "longitude": 45.3510
+                },
+                {
+                    "id": "papuanewguinea",
+                    "title": "Papua New Guinea",
+                    "latitude": -5.8567,
+                    "longitude": 142.3510
+                },
+                {
+                    "id": "canada",
+                    "title": "Canada",
+                    "latitude": 58.8567,
+                    "longitude": -109.3510
+                },
+                {
+                    "id": "greenland",
+                    "title": "Greenland",
+                    "latitude": 69.8567,
+                    "longitude": -39.3510
+                },
+                {
+                    "id": "bolivia",
+                    "title": "Bolivia",
+                    "latitude": -15.8567,
+                    "longitude": -65.3510
+                },
+                {
+                    "id": "vietnam",
+                    "title": "Vietnam",
+                    "latitude": 12.8567,
+                    "longitude": 105.3510
+                },
+                {
+                    "id": "zimbawe",
+                    "title": "Zimbawe",
+                    "latitude": -18.8567,
+                    "longitude": 31.3510
+                },
+                {
+                    "id": "guyana",
+                    "title": "Guyana",
+                    "latitude": 4.8567,
+                    "longitude": -57.3510
+                },
+                {
+                    "id": "drc",
+                    "title": "DRC",
+                    "latitude": -1.8567,
+                    "longitude": 23.3510
+                },
+                {
+                    "id": "unitedkingdom",
+                    "title": "United Kingdom",
+                    "latitude": 53.8567,
+                    "longitude": -1.3510
+                },
+                {
+                    "id": "thailand",
+                    "title": "Thailand",
+                    "latitude": 16.8567,
+                    "longitude": 101.3510
+                },
+                {
+                    "id": "iran",
+                    "title": "Iran",
+                    "latitude": 33.8567,
+                    "longitude": 53.3510
                 }
 
             ];
@@ -200,7 +314,7 @@ export class MapWithDropdownComponent {
             }, {
                 "id": "saudiarabia",
                 "title": "Saudi Arabia",
-                "destinations": ["usa", "india", "china", "southafrica", "germany", "brazil", "kiev", "sweden", "phillipines"],
+                "destinations": ["usa", "india", "china", "southafrica", "germany", "brazil", "ukraine", "sweden", "phillipines"],
                 "scale": 1.5,
                 "zoomLevel": 0.92,
                 "zoomLongitude": 14.46492,
@@ -210,7 +324,7 @@ export class MapWithDropdownComponent {
             }, {
                 "id": "southafrica",
                 "title": "South Africa",
-                "destinations": ["usa", "india", "china", "germany", "saudiarabia", "brazil", "kiev", "russia", "chile", "australia"],
+                "destinations": ["usa", "india", "china", "germany", "saudiarabia", "brazil", "ukraine", "russia", "chile", "australia"],
                 "scale": 1.5,
                 "zoomLevel": 0.92,
                 "zoomLongitude": 16.4492,
