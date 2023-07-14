@@ -16,7 +16,7 @@ am4core.useTheme(am4themes_animated);
     styleUrls: ['./map-with-dropdown.component.scss']
 })
 
-export class MapWithDropdownComponent implements OnChanges{
+export class MapWithDropdownComponent {
 
     @Input() destinationCities: any;
     @Input() originCities: any;
@@ -203,17 +203,12 @@ export class MapWithDropdownComponent implements OnChanges{
             console.log(i);
 
             chart.events.on("ready", function () {
-                console.log("ready event triggered")
+                // console.log("ready event triggered")
                 showLines(originImageSeries.dataItems.getIndex(i));
             })
 
             document.getElementById('mapDropdown').addEventListener('change', function (e:any) {
                 showLines(originImageSeries.dataItems.getIndex(e.target.value));
-            });
-
-            document.getElementById('app-slider').addEventListener('sliderChanged', function (e:any) {
-                // showLines(originImageSeries.dataItems.getIndex(e.target.value));
-                console.log(">> **"+ e);
             });
 
             let currentOrigin: am4maps.MapImageSeriesDataItem | undefined;
@@ -250,28 +245,4 @@ export class MapWithDropdownComponent implements OnChanges{
 
     }
 
-    ngOnChanges(changes: SimpleChanges) {
-        console.log('Input data changed!1');
-
-        if (changes.originCities) {
-            // const currentValue = changes.originCities.currentValue;
-            // const previousValue = changes.originCities.previousValue;
-
-            console.log('Input data changed!2');
-            // console.log('Current value:', currentValue);
-            // console.log('Previous value:', previousValue);
-
-            this.refreshData();
-
-            // Perform additional actions as needed
-        }
-    }
-
-    refreshData(){
-        if(this.originImageSeriesInstc){
-
-            this.originImageSeriesInstc.data = this.originCities;
-            this.chartInst?.invalidateData();
-        }
-    }
 }
