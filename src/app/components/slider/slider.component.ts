@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Options } from "@angular-slider/ngx-slider";
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Options} from "ngx-slider-v2";
 
 @Component({
   selector: 'app-slider',
@@ -7,6 +7,8 @@ import { Options } from "@angular-slider/ngx-slider";
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
+
+  @Output() sliderChanged: EventEmitter<any> = new EventEmitter<any>();
 
   value: number = 5;
   options: Options = {
@@ -26,4 +28,10 @@ export class SliderComponent {
       { value: 2023 },
     ]
   };
+
+  onSliderChange(e: any) {
+    debugger
+    console.log('Slider value changed:', e.value);
+    this.sliderChanged.emit(e.value);
+  }
 }

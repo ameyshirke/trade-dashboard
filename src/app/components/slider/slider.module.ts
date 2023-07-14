@@ -5,7 +5,7 @@ import {NgxSliderModule} from "ngx-slider-v2";
 @NgModule({
   declarations: [SliderComponent],
   imports: [
- NgxSliderModule
+    NgxSliderModule
   ],
   exports: [SliderComponent],
 })

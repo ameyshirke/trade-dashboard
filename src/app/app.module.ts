@@ -24,7 +24,7 @@ import {SliderModule} from "./components/slider/slider.module";
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    SliderModule
+    SliderModule,
   ],
   declarations: [
     AppComponent,

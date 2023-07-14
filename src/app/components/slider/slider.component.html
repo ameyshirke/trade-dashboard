@@ -1,4 +1,4 @@
 <div class="div">
-    <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+    <ngx-slider [(value)]="value" [options]="options" (userChange)="onSliderChange($event)" (change)="onSliderChange($event)"></ngx-slider>
   </div>
   

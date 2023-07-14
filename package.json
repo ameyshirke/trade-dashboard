@@ -12,9 +12,10 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.1.0",
     "@amcharts/amcharts4": "^4.10.36",
     "@amcharts/amcharts4-geodata": "^4.1.27",
+    "@angular-slider/ngx-slider": "^2.0.3",
+    "@angular/animations": "^16.1.0",
     "@angular/cdk": "^16.1.0",
     "@angular/common": "^16.1.0",
     "@angular/compiler": "^16.1.0",
@@ -28,18 +29,17 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
     "@ng-bootstrap/ng-bootstrap": "12.0.1",
-    "@angular-slider/ngx-slider": "^2.0.4",
-    "ngx-slider-v2": "^16.0.2",
     "@popperjs/core": "^2.11.4",
     "bootstrap": "4.6.1",
     "chart.js": "2.9.4",
     "clipboard": "2.0.10",
     "ngx-clipboard": "15.0.1",
+    "ngx-slider-v2": "^16.0.2",
     "ngx-toastr": "14.2.2",
     "nouislider": "15.5.1",
     "rxjs": "~7.5.0",
-    "zone.js": "~0.11.4",
-    "web-animations-js": "2.3.2"
+    "web-animations-js": "2.3.2",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.4",

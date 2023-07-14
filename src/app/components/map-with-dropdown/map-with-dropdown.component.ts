@@ -1,4 +1,4 @@
-import {Component, Inject, NgZone, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, Input, NgZone, OnChanges, PLATFORM_ID, SimpleChanges} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 
 // import * as am5xy from '@amcharts/amcharts5/xy';
@@ -16,7 +16,13 @@ am4core.useTheme(am4themes_animated);
     styleUrls: ['./map-with-dropdown.component.scss']
 })
 
-export class MapWithDropdownComponent {
+export class MapWithDropdownComponent implements OnChanges{
+
+    @Input() destinationCities: any;
+    @Input() originCities: any;
+
+    originImageSeriesInstc: any;
+    private chartInst: any;
 
     constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {
     }
@@ -37,6 +43,8 @@ export class MapWithDropdownComponent {
 
             let chart = am4core.create("map-with-routes", am4maps.MapChart);
 
+            this.chartInst = chart;
+
             let interfaceColors = new am4core.InterfaceColorSet();
 
             // Set map definition
@@ -52,286 +60,9 @@ export class MapWithDropdownComponent {
             chart.zoomControl = new am4maps.ZoomControl();
 
             // Data for general and map use
-            let destinationCities = [
-                {
-                    "id": "australia",
-                    "title": "Australia",
-                    "latitude": -23.6896,
-                    "longitude": 133.2799,
-                },
-                {
-                    "id": "japan",
-                    "title": "Japan",
-                    "latitude": 36.6896,
-                    "longitude": 138.2799,
-                },
-                {
-                    "id": "russia",
-                    "title": "Russia",
-                    "latitude": 63.6896,
-                    "longitude": 95.2799,
-                },
-                {
-                    "id": "sweden",
-                    "title": "Sweden",
-                    "latitude": 63.6896,
-                    "longitude": 16.2799,
-                },
-                {
-                    "id": "guinea",
-                    "title": "Guinea",
-                    "latitude": 13.6896,
-                    "longitude": -14.2799,
-                },
-                {
-                    "id": "switzerland",
-                    "title": "Switzerland",
-                    "latitude": 46.9480,
-                    "longitude": 7.4481
-                },
-                {
-                    "id": "ukraine",
-                    "title": "Ukraine",
-                    "latitude": 50.4422,
-                    "longitude": 30.5367
-                },
-                {
-                    "id": "france",
-                    "title": "France",
-                    "latitude": 48.8567,
-                    "longitude": 2.3510
-                },
-                {
-                    "id": "indonesia",
-                    "title": "Indonesia",
-                    "latitude": -1.8567,
-                    "longitude": 113.3510
-                },
-                {
-                    "id": "malaysia",
-                    "title": "Malaysia",
-                    "latitude": 4.8567,
-                    "longitude": 102.3510
-                },
-                {
-                    "id": "philippines",
-                    "title": "Philippines",
-                    "latitude": 8.8567,
-                    "longitude": 125.3510
-                },
-                {
-                    "id": "namibia",
-                    "title": "Namibia",
-                    "latitude": -21.8567,
-                    "longitude": 16.3510
-                },
-                {
-                    "id": "chile",
-                    "title": "Chile",
-                    "latitude": -34.8567,
-                    "longitude": -71.3510
-                },
-                {
-                    "id": "peru",
-                    "title": "Peru",
-                    "latitude": -10.8567,
-                    "longitude": -74.3510
-                },
-                {
-                    "id": "iceland",
-                    "title": "Iceland",
-                    "latitude": 65.8567,
-                    "longitude": -18.3510
-                },
-                {
-                    "id": "southkorea",
-                    "title": "South Korea",
-                    "latitude": 35.8567,
-                    "longitude": 128.3510
-                },
-                {
-                    "id": "mexico",
-                    "title": "Mexico",
-                    "latitude": 22.8567,
-                    "longitude": -102.3510
-                },
-                {
-                    "id": "egypt",
-                    "title": "Egypt",
-                    "latitude": 27.8567,
-                    "longitude": 27.3510
-                },
-                {
-                    "id": "argentina",
-                    "title": "Argentina",
-                    "latitude": -43.8567,
-                    "longitude": -68.3510
-                },
-                {
-                    "id": "algeria",
-                    "title": "Algeria",
-                    "latitude": 29.8567,
-                    "longitude": 4.3510
-                },
-                {
-                    "id": "mongolia",
-                    "title": "Mongolia",
-                    "latitude": 47.8567,
-                    "longitude": 103.3510
-                },
-                {
-                    "id": "newzealand",
-                    "title": "New Zealand",
-                    "latitude": -41.8567,
-                    "longitude": 173.3510
-                },
-                {
-                    "id": "madagascar",
-                    "title": "Madagascar",
-                    "latitude": -20.8567,
-                    "longitude": 45.3510
-                },
-                {
-                    "id": "papuanewguinea",
-                    "title": "Papua New Guinea",
-                    "latitude": -5.8567,
-                    "longitude": 142.3510
-                },
-                {
-                    "id": "canada",
-                    "title": "Canada",
-                    "latitude": 58.8567,
-                    "longitude": -109.3510
-                },
-                {
-                    "id": "greenland",
-                    "title": "Greenland",
-                    "latitude": 69.8567,
-                    "longitude": -39.3510
-                },
-                {
-                    "id": "bolivia",
-                    "title": "Bolivia",
-                    "latitude": -15.8567,
-                    "longitude": -65.3510
-                },
-                {
-                    "id": "vietnam",
-                    "title": "Vietnam",
-                    "latitude": 12.8567,
-                    "longitude": 105.3510
-                },
-                {
-                    "id": "zimbawe",
-                    "title": "Zimbawe",
-                    "latitude": -18.8567,
-                    "longitude": 31.3510
-                },
-                {
-                    "id": "guyana",
-                    "title": "Guyana",
-                    "latitude": 4.8567,
-                    "longitude": -57.3510
-                },
-                {
-                    "id": "drc",
-                    "title": "DRC",
-                    "latitude": -1.8567,
-                    "longitude": 23.3510
-                },
-                {
-                    "id": "unitedkingdom",
-                    "title": "United Kingdom",
-                    "latitude": 53.8567,
-                    "longitude": -1.3510
-                },
-                {
-                    "id": "thailand",
-                    "title": "Thailand",
-                    "latitude": 16.8567,
-                    "longitude": 101.3510
-                },
-                {
-                    "id": "iran",
-                    "title": "Iran",
-                    "latitude": 33.8567,
-                    "longitude": 53.3510
-                }
+            let destinationCities = this.destinationCities;
 
-            ];
-
-
-            let originCities = [{
-                "id": "germany",
-                "title": "Germany",
-                "destinations": ["usa", "india", "china", "southafrica", "saudiarabia", "brazil", "indonesia", "japan", "russia"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 15.4492,
-                "zoomLatitude": 50.2631,
-                "latitude": 51.1657,
-                "longitude": 10.4515
-            }, {
-                "id": "usa",
-                "title": "USA",
-                "destinations": ["germany", "india", "chile", "southafrica", "saudiarabia", "brazil", "guinea", "sweden"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 13.4492,
-                "zoomLatitude": 53.2631,
-                "latitude": 40.5602,
-                "longitude": -74.7129
-            }, {
-                "id": "india",
-                "title": "India",
-                "destinations": ["usa", "germany", "china", "southafrica", "saudiarabia", "brazil", "russia", "australia", "peru"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 16.4492,
-                "zoomLatitude": 54.2631,
-                "latitude": 20.5937,
-                "longitude": 78.9629
-            }, {
-                "id": "china",
-                "title": "China",
-                "destinations": ["australia", "india", "germany", "southafrica", "saudiarabia", "brazil", "sweden", "russia", "japan", "chile"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 14.4492,
-                "zoomLatitude": 53.2631,
-                "latitude": 35.8617,
-                "longitude": 104.1954
-            }, {
-                "id": "brazil",
-                "title": "Brazil",
-                "destinations": ["usa", "india", "china", "germany", "saudiarabia", "southafrica", "malaysia", "indonesia", "russia"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 13.4492,
-                "zoomLatitude": 48.2631,
-                "latitude": -16.2650,
-                "longitude": -50.3553
-            }, {
-                "id": "saudiarabia",
-                "title": "Saudi Arabia",
-                "destinations": ["usa", "india", "china", "southafrica", "germany", "brazil", "ukraine", "sweden", "phillipines"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 14.46492,
-                "zoomLatitude": 48.4631,
-                "latitude": 25.5595,
-                "longitude": 44.9375
-            }, {
-                "id": "southafrica",
-                "title": "South Africa",
-                "destinations": ["usa", "india", "china", "germany", "saudiarabia", "brazil", "ukraine", "russia", "chile", "australia"],
-                "scale": 1.5,
-                "zoomLevel": 0.92,
-                "zoomLongitude": 16.4492,
-                "zoomLatitude": 48.2631,
-                "latitude": -30.5595,
-                "longitude": 22.9375
-            }];
+            let originCities = this.originCities;
 
             // Default to London view
             //chart.homeGeoPoint = { "longitude": originCities[0].zoomLongitude, "latitude": originCities[0].zoomLatitude };
@@ -508,5 +239,30 @@ export class MapWithDropdownComponent {
             graticuleSeries.mapLines.template.line.strokeOpacity = 0.05;
         });
 
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        console.log('Input data changed!1');
+
+        if (changes.originCities) {
+            // const currentValue = changes.originCities.currentValue;
+            // const previousValue = changes.originCities.previousValue;
+
+            console.log('Input data changed!2');
+            // console.log('Current value:', currentValue);
+            // console.log('Previous value:', previousValue);
+
+            this.refreshData();
+
+            // Perform additional actions as needed
+        }
+    }
+
+    refreshData(){
+        if(this.originImageSeriesInstc){
+
+            this.originImageSeriesInstc.data = this.originCities;
+            this.chartInst?.invalidateData();
+        }
     }
 }
