@@ -9,7 +9,7 @@ import {MapWithPathsModule} from "./map-with-paths/map-with-paths.module";
 import {MapWithPathsComponent} from "./map-with-paths/map-with-paths.component";
 import {MapWithDropdownComponent} from "./map-with-dropdown/map-with-dropdown.component";
 import { SortedBarChartComponent } from './sorted-bar-chart/sorted-bar-chart.component';
-import { VariableRadiusNestedDonutChartComponent } from './variable-radius-nested-donut-chart/variable-radius-nested-donut-chart.component';
+import { PieChartWithLegendComponent } from './pie-chart-with-legend/pie-chart-with-legend.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -24,14 +24,14 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     SidebarComponent,
     SortedBarChartComponent,
-    VariableRadiusNestedDonutChartComponent
+    PieChartWithLegendComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
     SortedBarChartComponent,
-    VariableRadiusNestedDonutChartComponent
+    PieChartWithLegendComponent
   ]
 })
 export class ComponentsModule { }
