@@ -11,6 +11,7 @@ import {MapWithDropdownComponent} from "./map-with-dropdown/map-with-dropdown.co
 import { SortedBarChartComponent } from './sorted-bar-chart/sorted-bar-chart.component';
 import { PieChartWithLegendComponent } from './pie-chart-with-legend/pie-chart-with-legend.component';
 import {FormsModule} from "@angular/forms";
+import { AdminFormComponent } from '../pages/admin-form/admin-form.component';
 
 @NgModule({
   imports: [
@@ -24,14 +25,16 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     SidebarComponent,
     SortedBarChartComponent,
-    PieChartWithLegendComponent
+    PieChartWithLegendComponent,
+    AdminFormComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
     SortedBarChartComponent,
-    PieChartWithLegendComponent
+    PieChartWithLegendComponent,
+    AdminFormComponent
   ]
 })
 export class ComponentsModule { }
